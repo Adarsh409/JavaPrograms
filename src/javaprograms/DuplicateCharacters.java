@@ -1,3 +1,4 @@
+// Program to find duplicate characters in a string
 package javaprograms;
 
 import java.util.HashMap;

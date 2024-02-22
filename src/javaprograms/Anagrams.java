@@ -8,9 +8,9 @@ public class Anagrams {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter String 1: ");
-		String str1 = sc.next().trim();
+		String str1 = sc.nextLine().trim();
 		System.out.println("Enter String 2: ");
-		String str2 = sc.next().trim();
+		String str2 = sc.nextLine().trim();
 		if(str1.length() != str2.length()) {
 			System.out.println("Strings are not anagrams");
 		}

@@ -1,3 +1,4 @@
+// Program to replace lower case letters to upper case and vice versa
 package javaprograms;
 
 import java.util.Scanner;

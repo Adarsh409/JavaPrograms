@@ -16,5 +16,7 @@ public class StringReversal {
 		System.out.println("Reversed String: "+reversedString);
 		
 	}
+	//M a l a y a l a m t  10/5   0 2  2 4 4
+	
 
 }

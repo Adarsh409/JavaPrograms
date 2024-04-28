@@ -1,47 +1,30 @@
-
-// Program to check if two strings are anagrams
-package javaprograms;
-
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class Anagrams {
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String 1: ");
-		String str1 = sc.nextLine().trim();
-		System.out.println("Enter String 2: ");
-		String str2 = sc.nextLine().trim();
-		if(str1.length() != str2.length()) {
-			System.out.println("Strings are not anagrams");
-		}
-		else {
-			if(areAnagrams(str1.toCharArray(),str2.toCharArray())) {
-				System.out.println("Strings are anagrams");
-			}
-			else {
-				System.out.println("Strings are not anagrams");
-			}
-		}
-		
-	}
-	
-	public static boolean areAnagrams(char[] str1Array,char[] str2Array) {
-		boolean flag = false ;
-		Arrays.sort(str1Array);
-		Arrays.sort(str2Array);
-		for(int i=0;i<str1Array.length;i++) {
-			if(str1Array[i] != str2Array[i]) {
-				flag = false;
-				break;
-			}
-			else {
-				flag = true;
-			}
-		}
-		return flag;
-	}
-	
-	
-}
+#Declare loggers
+status = error
+name= Log4j2PropertiesConfig
+appenders=a_console, a_rolling
+rootLogger.level=info
+rootLogger.appenderRefs = ar_console,ar_rolling
+rootLogger.appenderRef.ar_console.ref = StdoutAppender
+rootLogger.appenderRef.ar_rolling.ref= RollingAppender
+#Console Logger
+appender.a_console.type = Console
+appender.a_console.name = StdoutAppender
+appender.a_console.layout.type = PatternLayout
+appender.a_console.layout.pattern = [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+#Rolling Logger
+appender.a_rolling.type = RollingFile
+appender.a_rolling.name = RollingAppender
+appender.a_rolling.layout.pattern = [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+appender.a_rolling.fileName=Logs/testslog.log
+appender.a_rolling.filePattern=log4j2-sample-%d{yyyy-MM-dd}.log
+appender.a_rolling.layout.type = PatternLayout
+appender.a_rolling.policies.type = Policies
+appender.a_rolling.policies.time.type = TimeBasedTriggeringPolicy
+appender.a_rolling.policies.time.interval = 1
+# To change log file every day
+appender.a_rolling.policies.time.modulate = true
+# To change log file after 10MB size
+appender.a_rolling.policies.size.type = SizeBasedTriggeringPolicy
+appender.a_rolling.policies.size.size=10MB
+appender.a_rolling.strategy.type = DefaultRolloverStrategy
+appender.a_rolling.strategy.max = 20
